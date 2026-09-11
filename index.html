@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANA IT PM Mock Interview</title>
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--text:#182033;--muted:#667085;--border:#e4e7ec;--accent:#4f46e5;--accent2:#312e81;--soft:#eef2ff;--dark:#111827}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.app{max-width:1180px;margin:0 auto;padding:22px 16px 48px}
+.hero{background:linear-gradient(135deg,var(--dark),var(--accent2));color:white;border-radius:24px;padding:28px 30px;box-shadow:0 12px 32px rgba(16,24,40,.12)}
+.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,42px);line-height:1.1}
+.hero p{margin:0;color:rgba(255,255,255,.82)}
+.nav-wrap{position:sticky;top:0;z-index:20;background:rgba(247,248,252,.95);backdrop-filter:blur(12px);padding:12px 0 8px}
+.topnav{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.tab{min-width:48px;border:1px solid var(--border);background:#fff;color:var(--text);padding:10px 13px;border-radius:999px;cursor:pointer;font-weight:800;white-space:nowrap;transition:.15s}
+.tab:hover{transform:translateY(-1px);border-color:#c7d2fe}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.panel{display:none;animation:fade .18s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+.question-header{display:flex;align-items:center;gap:14px;margin:24px 0 12px}
+.question-header h1{margin:0;font-size:clamp(24px,3vw,34px);line-height:1.2}
+.qbadge{width:54px;height:54px;display:grid;place-items:center;border-radius:15px;background:var(--accent);color:#fff;font-size:18px;font-weight:900;flex:0 0 auto}
+.card,.phrase-group{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 4px 16px rgba(16,24,40,.04)}
+.qcontent h2{font-size:19px;color:#3730a3;margin:24px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.qcontent h2:first-child{margin-top:0}
+.qcontent h3{font-size:16px;margin:18px 0 6px}
+.qcontent p{margin:8px 0}
+.qcontent ul{padding-left:22px;margin-top:8px}
+.qcontent li{margin:5px 0}
+.qcontent blockquote{margin:12px 0;padding:12px 14px;background:var(--soft);border-left:4px solid var(--accent);border-radius:10px}
+.qcontent code{background:#f2f4f7;padding:2px 5px;border-radius:5px}
+.qcontent hr{border:0;border-top:1px solid var(--border);margin:24px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:20px}
+.phrase{background:var(--soft);border-left:4px solid var(--accent);padding:11px 12px;border-radius:10px;margin:9px 0;font-weight:650}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid #c7d2fe;color:#3730a3;padding:7px 10px;border-radius:999px;font-size:14px;font-weight:800}
+.framework{background:var(--dark);color:#fff;padding:16px;border-radius:14px;font-weight:800;margin:10px 0}
+.section-title{margin:24px 0 0;font-size:30px}
+.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
+@media(max-width:640px){
+  .app{padding:12px 10px 30px}
+  .hero{padding:22px 20px;border-radius:18px}
+  .question-header{align-items:flex-start}
+  .qbadge{width:46px;height:46px;border-radius:12px}
+  .card{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<section class="hero">
+  <h1>DANA IT PM Mock Interview</h1>
+  <p>One question per tab. Each tab contains the interview question, your core answer, feedback, and polished answer.</p>
+</section>
+
+<div class="nav-wrap">
+<nav class="topnav">
+  <button class="tab active" data-panel="q1" title="Self-Introduction &amp; Why DANA">Q1</button><button class="tab" data-panel="q2" title="Project Management Experience">Q2</button><button class="tab" data-panel="q3" title="Handling a High-Priority Mid-Sprint Request">Q3</button><button class="tab" data-panel="q4" title="Engineering vs Stakeholder Conflict">Q4</button><button class="tab" data-panel="q5" title="Prioritization: Incident vs Feature vs Technical Debt">Q5</button><button class="tab" data-panel="q6" title="Stakeholder Pushback on Prioritization">Q6</button><button class="tab" data-panel="q7" title="Risk Management — Unstable External API">Q7</button><button class="tab" data-panel="q8" title="Critical-Path Delay">Q8</button><button class="tab" data-panel="q9" title="Agile / Scrum — Tickets Keep Carrying Over">Q9</button><button class="tab" data-panel="q10" title="Project Status Reporting">Q10</button><button class="tab" data-panel="q11" title="Failure / Lesson Learned">Q11</button><button class="tab" data-panel="q12" title="Why DANA / Why Should We Hire You?">Q12</button>
+  <button class="tab" data-panel="phrases">Phrases</button>
+  <button class="tab" data-panel="buzzwords">Buzzwords</button>
+  <button class="tab" data-panel="frameworks">Frameworks</button>
+</nav>
+</div>
+
+<main>
+<section id="q1" class="panel active"><div class="question-header"><div class="qbadge">Q1</div><h1>Self-Introduction &amp; Why DANA</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>Could you please introduce yourself and tell me why you are interested in the IT Project Management Intern position at DANA Indonesia?</strong></p>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Final-year / 7th-semester AI Engineering student at ITS Surabaya.</li>
+<li>Previous internships at several companies.</li>
+<li>Most recent relevant experience: Project Management Intern at SEVIMA.</li>
+<li>Led an engineering team in developing an AI orchestration / RAG platform.</li>
+<li>Interested in IT Project Management because it is relevant to your previous PM experience.</li>
+<li>Interested in DANA because fintech requires strong understanding of:</li>
+</ul>
+<p>  - Security</p>
+<p>  - Reliability</p>
+<p>  - Maintainability</p>
+<p>  - User experience</p>
+<p>  - Domain knowledge</p>
+<h2>Key Feedback</h2>
+<ul>
+<li>Avoid factual slips in your own profile or company names.</li>
+<li>Use:</li>
+</ul>
+<p>  - “I’m interested <strong>in</strong> the position”</p>
+<p>  - “Most recently, I interned at…”</p>
+<p>  - “Fintech is a highly sensitive domain”</p>
+<ul>
+<li>Avoid weak phrasing such as:</li>
+</ul>
+<p>  - “I’m a little bit curious”</p>
+<ul>
+<li>Prefer:</li>
+</ul>
+<p>  - “I’m particularly interested in…”</p>
+<p>  - “I’m excited to learn…”</p>
+<h2>Polished Answer</h2>
+<p>Hi, my name is Abdan Hafidz, and you can call me Abdan. I’m a final-year AI Engineering student at Institut Teknologi Sepuluh Nopember, or ITS Surabaya.</p>
+<p>Most recently, I worked as a Project Management Intern at SEVIMA, where I also served as the technical lead for a capstone project. I led an engineering team in developing an AI orchestration platform that could be integrated with the company’s existing products. My responsibilities included managing requirements, preparing the PRD, coordinating engineering tasks, aligning API contracts, and managing technical risks throughout the development process.</p>
+<p>I’m interested in the IT Project Management Intern position at DANA because it is closely related to my previous experience, but it would also expose me to a much more complex domain. Fintech is highly sensitive because project decisions can affect security, reliability, user experience, and system availability.</p>
+<p>I’m particularly interested in learning how IT projects are managed in a large-scale digital payment ecosystem like DANA, where project managers need to understand both business requirements and technical constraints. I believe my technical background would also help me communicate effectively with engineering teams while continuing to develop my project management skills.</p>
+<hr></div></section><section id="q2" class="panel"><div class="question-header"><div class="qbadge">Q2</div><h1>Project Management Experience</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>You mentioned that you led an engineering team during your internship at SEVIMA. Could you walk me through one project you managed, including your responsibilities, the challenges you faced, and how you ensured the project stayed on track?</strong></p>
+<h2>Your Core Answer</h2>
+<p>Project: <strong>RAG Hub / Retrieval-Augmented Generation Hub</strong></p>
+<p>Responsibilities:</p>
+<ul>
+<li>Bridged stakeholder requirements and engineering implementation.</li>
+<li>Gathered and clarified requirements.</li>
+<li>Wrote:</li>
+</ul>
+<p>  - BRD</p>
+<p>  - PRD</p>
+<p>  - SRS / technical specifications</p>
+<ul>
+<li>Guided technical implementation.</li>
+<li>Coordinated timeline and resource decisions.</li>
+<li>Used Jira and Confluence.</li>
+<li>Defined and reviewed acceptance criteria.</li>
+</ul>
+<p>Challenge:</p>
+<ul>
+<li>Miscommunication between stakeholders and engineers.</li>
+<li>Engineers sometimes interpreted requirements differently.</li>
+<li>Risk of over-engineering or under-delivering.</li>
+</ul>
+<p>Solution:</p>
+<ul>
+<li>Improved documentation.</li>
+<li>Clarified acceptance criteria.</li>
+<li>Increased communication between stakeholders and engineers.</li>
+<li>Used Jira ticketing and Kanban boards to track progress.</li>
+</ul>
+<h2>Key Feedback</h2>
+<ul>
+<li>Do not spend too long explaining what RAG is unless asked.</li>
+<li>Focus on the PM story.</li>
+<li>Avoid:</li>
+</ul>
+<p>  - “I’m demanding the team”</p>
+<ul>
+<li>Prefer:</li>
+</ul>
+<p>  - “I make sure the team aligns on clear acceptance criteria and Definition of Done.”</p>
+<h2>Polished Answer</h2>
+<p>One project I managed was RAG Hub, an AI orchestration platform designed to help SEVIMA integrate AI capabilities into its existing products through standardized APIs.</p>
+<p>My main responsibility was to bridge the gap between stakeholder requirements and the engineering team. I gathered and clarified business requirements, translated them into documents such as the BRD, PRD, and technical specifications, and then coordinated the implementation with the engineering team.</p>
+<p>One of the main challenges was misalignment between stakeholder expectations and the engineering team’s interpretation. In some cases, developers could over-engineer a feature, while in other cases, the implementation might not fully address the actual business requirement.</p>
+<p>To solve this, I focused on creating clearer requirement documentation, defining acceptance criteria before development started, and maintaining regular communication between stakeholders and engineers. I also made sure that technical decisions were aligned with project constraints such as timeline, infrastructure cost, and available resources.</p>
+<p>To keep the project on track, I used Jira to manage tickets, sprint progress, and Kanban workflows, while Confluence was used for documentation and technical specifications. I monitored each task against its acceptance criteria and regularly reviewed blockers with the team.</p>
+<p>As a result, we were able to deliver a production-ready RAG platform while keeping the infrastructure cost below 30 US dollars and maintaining strong system performance.</p>
+<hr></div></section><section id="q3" class="panel"><div class="question-header"><div class="qbadge">Q3</div><h1>Handling a High-Priority Mid-Sprint Request</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>The engineering team is halfway through a sprint. A stakeholder suddenly requests a high-priority feature and wants it delivered within the same sprint. How would you handle it?</strong></p>
+<h2>Recommended Follow-Up Questions</h2>
+<p>Before answering:</p>
+<ul>
+<li>How critical is the feature to the business?</li>
+<li>What is driving the urgency?</li>
+<li>Is the deadline fixed?</li>
+<li>What is the estimated engineering effort?</li>
+<li>What is the current team capacity?</li>
+<li>Are there dependencies?</li>
+<li>Can any current sprint items be deprioritized?</li>
+<li>Is a smaller demo-ready scope acceptable?</li>
+</ul>
+<h2>Scenario Information</h2>
+<ul>
+<li>Feature is related to a new merchant payment flow.</li>
+<li>Needed for an external partner demo on Friday.</li>
+<li>Full implementation requires around 5 person-days.</li>
+<li>Team:</li>
+</ul>
+<p>  - 2 backend engineers</p>
+<p>  - 1 frontend engineer</p>
+<p>  - 1 QA engineer</p>
+<ul>
+<li>Team is already fully committed.</li>
+<li>Around 60% of sprint work is complete.</li>
+</ul>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Perform impact analysis.</li>
+<li>Identify low-priority sprint items.</li>
+<li>Move lower-priority work back to the Product Backlog.</li>
+<li>Make the urgent feature top priority.</li>
+<li>Reassign work based on team capacity.</li>
+<li>Define acceptance criteria.</li>
+<li>Consider a smaller demo-ready version if full implementation is too large.</li>
+</ul>
+<h2>Key Feedback</h2>
+<ul>
+<li>Correct term: move postponed work back to the <strong>Product Backlog</strong>, not Sprint Backlog.</li>
+<li>Avoid solving the issue by telling engineers to “code faster.”</li>
+<li>Core PM problem is scope and trade-off management.</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>Based on the information, I would first conduct an impact analysis with the engineering team to identify which current sprint items could realistically be postponed without creating major dependencies or business risks.</p>
+<p>Since the new feature requires around five person-days and the team is already fully committed, I would not simply add it on top of the existing sprint scope because that could increase delivery risk and reduce quality.</p>
+<p>I would identify the lowest-priority items with minimal dependencies and propose moving them back to the Product Backlog. Then I would present the trade-off clearly to the stakeholder: if we prioritize the merchant payment feature for the Friday demo, these specific items would likely move to the next sprint.</p>
+<p>After getting stakeholder alignment, I would update the sprint plan, assign the work based on engineering capacity, define clear acceptance criteria for the demo, and monitor blockers closely until Friday.</p>
+<p>If the full production-ready feature is still too large for the available capacity, I would discuss whether we could deliver a smaller demo-ready scope first and schedule the remaining production requirements for the next sprint.</p>
+<hr></div></section><section id="q4" class="panel"><div class="question-header"><div class="qbadge">Q4</div><h1>Engineering vs Stakeholder Conflict</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>A backend engineer says a feature will require at least five days to implement properly, but the business stakeholder insists it must be completed in two days and says, “It’s just a simple API change.” How would you handle the disagreement?</strong></p>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Do not immediately take either side.</li>
+<li>Be honest with the stakeholder.</li>
+<li>Validate whether the engineer’s five-day estimate is justified.</li>
+<li>Explain the complexity to the stakeholder in simple language.</li>
+<li>Offer a compromise:</li>
+</ul>
+<p>  - Prototype</p>
+<p>  - Mock backend</p>
+<p>  - Dummy data</p>
+<ul>
+<li>Let frontend demonstrate the flow.</li>
+<li>Finish the production-ready implementation after the demo.</li>
+</ul>
+<h2>Key Feedback</h2>
+<ul>
+<li>Do not imply the engineer might simply be lazy.</li>
+<li>Ask for a breakdown of the estimate:</li>
+</ul>
+<p>  - Development</p>
+<p>  - Testing</p>
+<p>  - Integration</p>
+<p>  - Security</p>
+<p>  - Deployment</p>
+<ul>
+<li>Do not automatically make the stakeholder’s request the highest priority.</li>
+<li>In fintech, do not compromise mandatory security or quality requirements.</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>First, I would avoid immediately taking either side. I would clarify the business reason behind the two-day deadline and ask the backend engineer to break down the five-day estimate, including development, testing, integration, and potential technical risks.</p>
+<p>If the five-day estimate is justified, I would explain the situation to the stakeholder in business-friendly language rather than using too much technical detail. I would make the trade-off clear: forcing the full implementation into two days could create quality, reliability, or security risks.</p>
+<p>At the same time, I would not simply tell the stakeholder that the request is impossible. I would propose alternatives that still achieve the business objective.</p>
+<p>For example, if the main requirement is to demonstrate the feature in two days, we could build a prototype or use mocked backend responses so the frontend can demonstrate the intended user flow. After the demo, the engineering team could complete the production-ready API implementation with proper testing and integration.</p>
+<p>My goal would be to make sure both sides understand the constraints and agree on a solution that protects the deadline without compromising production quality.</p>
+<hr></div></section><section id="q5" class="panel"><div class="question-header"><div class="qbadge">Q5</div><h1>Prioritization: Incident vs Feature vs Technical Debt</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p>You have three requests:</p>
+<p><strong>Request A:</strong> A major merchant reports a payment issue affecting around 5% of transactions.</p>
+<p><strong>Request B:</strong> Product wants a new feature launched this week because a competitor released something similar.</p>
+<p><strong>Request C:</strong> Engineering wants to refactor an old service because technical debt is slowing development.</p>
+<p><strong>You only have capacity to prioritize one immediately. Which one do you choose?</strong></p>
+<h2>Your Core Answer</h2>
+<p>You prioritized <strong>Request A</strong> because:</p>
+<ul>
+<li>It affects a real production flow.</li>
+<li>It has business impact.</li>
+<li>It can affect governance, reliability, and customer experience.</li>
+<li>It is more urgent than a feature opportunity or technical debt.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>The strongest reason is not merely “compliance is external.”</p>
+<p>The stronger PM framing:</p>
+<ul>
+<li>Request A = confirmed production impact.</li>
+<li>Request B = future strategic opportunity.</li>
+<li>Request C = long-term maintainability concern.</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>I would prioritize Request A because it is already affecting real payment transactions for a major merchant. Even though the issue only affects around 5% of transactions, it directly impacts users, merchant trust, transaction success rate, and potentially revenue and regulatory risk.</p>
+<p>Request B is important from a competitive and business-growth perspective, but it is still a future opportunity rather than an active production problem. Request C is also important because technical debt can reduce engineering velocity over time, but it is primarily a long-term maintainability issue.</p>
+<p>So I would allocate the available capacity to Request A first, while communicating clearly to the Product team and Engineering team why their requests are being temporarily deprioritized.</p>
+<p>For Request B, I would explain that we are protecting the reliability of the core payment experience first, then reassess the feature launch as soon as the incident is stabilized. For Request C, I would make sure the refactoring work remains visible in the backlog and is scheduled deliberately rather than being postponed indefinitely.</p>
+<p>My prioritization would be based on immediate business impact, customer impact, operational risk, and urgency.</p>
+<hr></div></section><section id="q6" class="panel"><div class="question-header"><div class="qbadge">Q6</div><h1>Stakeholder Pushback on Prioritization</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>The Product Manager says: “The payment issue only affects 5% of transactions. If we delay the new feature, we may lose market momentum to our competitor. I think the feature should still be top priority.” How do you respond?</strong></p>
+<h2>Follow-Up Question You Asked</h2>
+<p>You clarified:</p>
+<ul>
+<li>What does “losing market momentum” mean?</li>
+<li>Are users actually switching to competitors?</li>
+</ul>
+<h2>Scenario Clarification</h2>
+<ul>
+<li>The competitor already launched a similar feature.</li>
+<li>There is concern about user and merchant preference.</li>
+<li>There is no strong evidence of actual switching.</li>
+<li>Request A is a confirmed production issue affecting 5% of transactions.</li>
+</ul>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Challenge the assumption.</li>
+<li>Prioritize evidence over speculation.</li>
+<li>Keep Request A as highest priority.</li>
+<li>Ask Product to validate Request B with data.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>Avoid confrontational language such as:</p>
+<ul>
+<li>“That is a very weak assumption.”</li>
+<li>“Who made the claim?”</li>
+</ul>
+<p>Instead:</p>
+<ul>
+<li>Acknowledge the concern.</li>
+<li>Separate validated impact from unvalidated strategic risk.</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>I understand the Product Manager’s concern because competitor activity can affect market positioning. However, at this point, we do not have strong evidence that users or merchants are actually switching because of the competitor’s new feature.</p>
+<p>On the other hand, Request A is a confirmed production issue that is already affecting around 5% of transactions for a major merchant. So based on current evidence, I would still prioritize Request A because the impact is real, measurable, and happening now.</p>
+<p>I would explain to the Product Manager that I am not dismissing Request B. I would ask the Product team to validate the market-risk assumption using available data such as user feedback, merchant feedback, churn indicators, transaction trends, or competitor analysis.</p>
+<p>Once the payment issue is stabilized, I would reassess Request B immediately. If the data shows that we are actually losing users or merchants because of the missing feature, then I would increase its priority accordingly.</p>
+<p>So my decision would be based on evidence: resolve the confirmed operational issue first while validating the strategic risk in parallel.</p>
+<hr></div></section><section id="q7" class="panel"><div class="question-header"><div class="qbadge">Q7</div><h1>Risk Management — Unstable External API</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>Your project is scheduled to launch in two weeks. An engineer tells you that an external API dependency has become unstable and may delay the launch. How would you manage the risk and communicate it to stakeholders?</strong></p>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Follow up with engineers.</li>
+<li>Measure the risk.</li>
+<li>Understand whether changes are minor or major.</li>
+<li>Consider whether the existing dependency can still be used.</li>
+<li>Consider launch delay if risk is too large.</li>
+<li>Communicate carefully to stakeholders.</li>
+<li>Explore demo-first or fallback options.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>Important misunderstanding:</p>
+<ul>
+<li>The scenario says the external API is unstable.</li>
+<li>It does not necessarily mean your team is updating a dependency version.</li>
+</ul>
+<p>Focus first on:</p>
+<ul>
+<li>Error rate</li>
+<li>Latency</li>
+<li>Downtime</li>
+<li>Affected functionality</li>
+<li>SLA</li>
+<li>Fallback</li>
+<li>Alternative provider</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>First, I would validate the risk with the engineering team and collect concrete facts about the external API instability, such as its failure rate, latency, affected functionality, and how critical the dependency is to our launch.</p>
+<p>Then I would assess the risk based on probability and impact. If the API is only affecting a non-critical flow and we have a safe workaround, I would work with the team on a mitigation plan, such as retry mechanisms, caching, a fallback flow, or temporarily disabling the affected feature.</p>
+<p>However, if the unstable API is critical to the core user journey and there is no reliable fallback, I would treat it as a high launch risk.</p>
+<p>I would communicate this to stakeholders early, not wait until the deadline. I would explain the issue in business terms: what is affected, how likely the risk is, what the potential impact is, and what mitigation options we have.</p>
+<p>I would then present clear options. For example, we could proceed with the original launch if the risk is controlled, launch with reduced scope if the affected feature can be isolated, or delay the launch if reliability or user impact would be unacceptable.</p>
+<p>My goal would be to avoid surprising stakeholders while making sure the final decision is based on quantified risk rather than optimism.</p>
+<h3>Useful Framework</h3>
+<p><strong>Risk → Probability × Impact → Mitigation → Contingency → Owner → Communication</strong></p>
+<hr></div></section><section id="q8" class="panel"><div class="question-header"><div class="qbadge">Q8</div><h1>Critical-Path Delay</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>One backend task is on the project’s critical path, but the engineer says it will be delayed by three days because implementation is more complex than expected. What would you do to prevent the delay from affecting the overall project deadline?</strong></p>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Clarify what “complex” means.</li>
+<li>Validate the reason for the delay.</li>
+<li>Break the task into smaller components.</li>
+<li>Use decomposition / modularization.</li>
+<li>Start with easier sub-parts.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>Do not spend too much time proving whether the engineer’s technical complexity claim is valid.</p>
+<p>Focus on:</p>
+<ul>
+<li>Critical path</li>
+<li>Remaining work</li>
+<li>Parallelization</li>
+<li>Resource reallocation</li>
+<li>Downstream blockers</li>
+<li>Mock/stub interfaces</li>
+<li>Scope reduction</li>
+<li>Escalation</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>First, I would clarify with the backend engineer why the task is delayed and ask them to break down the remaining work, dependencies, and blockers.</p>
+<p>Since the task is on the critical path, I would immediately assess whether the three-day delay can be absorbed elsewhere in the schedule or whether it will directly affect the final deadline.</p>
+<p>If it affects the deadline, I would look for mitigation options. For example, I could split the task into smaller components, identify parts that can be worked on in parallel, assign another engineer to support the task, or temporarily deprioritize lower-impact work so that more capacity can be allocated to the critical-path item.</p>
+<p>I would also check whether downstream teams are completely blocked by this backend task. If possible, we could provide a mock API, interface contract, or temporary stub so that frontend or QA work can continue while the actual implementation is being completed.</p>
+<p>If the delay still cannot be recovered, I would communicate the impact to stakeholders early and present options, such as reducing scope or adjusting the delivery date, rather than waiting until the deadline is already missed.</p>
+<p>My priority would be to protect the critical path, reduce idle time across the team, and make the impact visible as early as possible.</p>
+<hr></div></section><section id="q9" class="panel"><div class="question-header"><div class="qbadge">Q9</div><h1>Agile / Scrum — Tickets Keep Carrying Over</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>Your team is using Scrum, but during several consecutive sprints, many tickets keep being carried over into the next sprint. What would you investigate, and what actions would you take to improve sprint predictability?</strong></p>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Define clear acceptance criteria.</li>
+<li>Estimate effort.</li>
+<li>Use person-days / man-days.</li>
+<li>If work is too large, split it across multiple sprints.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>Look beyond ticket size.</p>
+<p>Possible root causes:</p>
+<ul>
+<li>Oversized tickets</li>
+<li>Poor estimation</li>
+<li>Unclear requirements</li>
+<li>Hidden dependencies</li>
+<li>Unplanned work</li>
+<li>Blockers</li>
+<li>Overcommitment</li>
+<li>Capacity mismatch</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>First, I would investigate the pattern behind the carry-over. I would check whether the tickets were too large, whether the requirements and acceptance criteria were clear before the sprint started, whether there were unexpected dependencies or blockers, and whether the team consistently overcommitted compared with its actual capacity.</p>
+<p>Then I would improve sprint planning by making sure each ticket has clear acceptance criteria and a reasonable effort estimate before being committed to the sprint.</p>
+<p>If a feature is too large to be completed within one sprint, I would split it into smaller deliverable stories instead of carrying the entire feature across multiple sprints.</p>
+<p>I would also compare planned work with the team’s historical velocity or actual capacity, so we do not keep committing more work than the team can realistically finish.</p>
+<p>During retrospectives, I would review the root causes of carried-over tickets and turn those findings into concrete actions for the next sprint.</p>
+<p>The goal would be to improve predictability, not simply push the team to finish more work.</p>
+<hr></div></section><section id="q10" class="panel"><div class="question-header"><div class="qbadge">Q10</div><h1>Project Status Reporting</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>Your manager asks for a project status update. The project is mostly on track, one milestone is at risk, and there are two unresolved blockers owned by other teams. How would you structure your status update?</strong></p>
+<h2>Your Core Answer</h2>
+<ul>
+<li>Start with good news.</li>
+<li>Mention that most of the project is on track.</li>
+<li>Mention milestone risks and blockers.</li>
+<li>Prepare solutions before escalating.</li>
+<li>Explain risks carefully.</li>
+<li>Avoid bringing a problem without a proposed solution.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>Do not hide or soften risk merely to keep management comfortable.</p>
+<p>Management needs:</p>
+<ul>
+<li>Accuracy</li>
+<li>Concision</li>
+<li>Decision-ready information</li>
+</ul>
+<p>Avoid phrases like:</p>
+<ul>
+<li>“a little bit of spice”</li>
+<li>“so the manager will not be frustrated”</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>I would structure the update in a concise and decision-oriented way.</p>
+<p>First, I would give an overall project status, for example whether the project is green, yellow, or red, and briefly explain why.</p>
+<p>Then I would summarize what is on track, followed by the milestone that is currently at risk. I would explain the expected impact if that risk materializes, including whether it affects the timeline, scope, or dependencies.</p>
+<p>For the two blockers owned by other teams, I would clearly state the blocker, the owner, how long it has been open, and what escalation or support is needed.</p>
+<p>I would also include the mitigation plan that we have already prepared, so I am not only reporting problems but also presenting possible actions.</p>
+<p>Finally, if management needs to make a decision, I would make that explicit, for example: “We need approval to deprioritize Feature X,” or “We need escalation to Team Y by tomorrow to protect the milestone.”</p>
+<p>My goal would be to make the update transparent, concise, and actionable.</p>
+<h3>Useful Structure</h3>
+<p><strong>Overall Status → Progress → Risks → Blockers → Mitigation → Decision Needed</strong></p>
+<hr></div></section><section id="q11" class="panel"><div class="question-header"><div class="qbadge">Q11</div><h1>Failure / Lesson Learned</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>Tell me about a time when a project or task did not go as planned. What happened, what did you do, and what did you learn from it?</strong></p>
+<h2>Your Core Answer</h2>
+<p>Example from SEVIMA:</p>
+<ul>
+<li>Expected AI chat endpoint to use WebSocket / real-time streaming.</li>
+<li>Backend engineer did not yet have enough experience with the implementation.</li>
+<li>You simplified scope to a normal request-response API.</li>
+<li>Real-time streaming was moved to a future sprint.</li>
+<li>Engineer was given time to learn.</li>
+<li>Lesson:</li>
+</ul>
+<p>  - Know the team’s competencies.</p>
+<p>  - Communicate before assigning difficult tasks.</p>
+<p>  - Trust and transparency are important.</p>
+<h2>Key Feedback</h2>
+<p>Frame the lesson around your planning assumption, not the engineer’s lack of skill.</p>
+<p>Better:</p>
+<p>“I realized that I had assumed the team was already comfortable with WebSocket-based streaming without validating that assumption during planning.”</p>
+<h2>Polished Answer</h2>
+<p>During my Project Management internship at SEVIMA, one feature did not go exactly as planned. I expected the AI chat endpoint to support real-time streaming using WebSocket, similar to the typing effect users see in modern AI applications.</p>
+<p>However, during implementation, I realized that I had assumed the backend engineer was already comfortable with that approach without validating it during planning. Implementing it immediately would have increased delivery risk.</p>
+<p>So instead of forcing the original scope, I proposed delivering a simpler request-response API first so the core chat functionality could still be completed within the sprint. We then moved the real-time streaming improvement back to the Product Backlog and planned to revisit it after the engineer had enough time to learn and prepare.</p>
+<p>The main lesson for me was that technical planning should not only consider what the ideal architecture is, but also the actual capability, capacity, and readiness of the team.</p>
+<p>Since then, before assigning technically demanding work, I try to validate the team’s familiarity with the technology, discuss implementation risks early, and make sure everyone is comfortable raising concerns before the sprint starts.</p>
+<p>I also learned that trust and communication are critical. Engineers should feel safe being transparent about uncertainty, because hiding uncertainty can create much larger delivery problems later.</p>
+<hr></div></section><section id="q12" class="panel"><div class="question-header"><div class="qbadge">Q12</div><h1>Why DANA / Why Should We Hire You?</h1></div><div class="card qcontent"><h2>Interview Question</h2>
+<p><strong>Why should DANA choose you for this IT Project Management Intern position compared with other candidates?</strong></p>
+<h2>Your Core Answer</h2>
+<p>Why DANA:</p>
+<ul>
+<li>Strong fintech ecosystem.</li>
+<li>Interested in the complexity of financial technology.</li>
+<li>Interested in product, operations, reliability, and user experience.</li>
+</ul>
+<p>Why you:</p>
+<ul>
+<li>Strong technical background.</li>
+<li>Project management experience.</li>
+<li>Backend and AI expertise.</li>
+<li>Research / scientific background.</li>
+<li>M-shaped profile.</li>
+<li>Can bridge technical and operational teams.</li>
+<li>Can understand both engineering and business perspectives.</li>
+</ul>
+<h2>Key Feedback</h2>
+<p>Avoid subjective competitor comparisons such as:</p>
+<ul>
+<li>“OVO is not very popular.”</li>
+<li>“Competitors are expensive.”</li>
+</ul>
+<p>Focus on:</p>
+<ul>
+<li>DANA’s scale</li>
+<li>Fintech complexity</li>
+<li>Reliability</li>
+<li>Security</li>
+<li>Cross-functional coordination</li>
+<li>Learning opportunity</li>
+</ul>
+<h2>Polished Answer</h2>
+<p>I’m interested in DANA because it operates in a highly complex fintech environment, where project management is not only about delivering features on time, but also about balancing reliability, security, user experience, business priorities, and coordination across multiple technical teams.</p>
+<p>I believe that kind of environment would give me strong exposure to real IT project management at scale.</p>
+<p>As for why DANA should choose me, I think my main strength is the combination of technical depth and project management experience.</p>
+<p>I have a strong background in backend engineering, AI engineering, and software systems, but I also have direct experience managing an engineering project as a Project Management Intern. In that role, I worked on requirement gathering, PRD development, technical specifications, Jira and Confluence tracking, stakeholder communication, and engineering coordination.</p>
+<p>Because of that combination, I can communicate with both technical and non-technical stakeholders. I can understand engineering constraints while also translating them into business impact and project decisions.</p>
+<p>I also see myself as an M-shaped person: I have broad exposure across several domains, but deeper expertise in areas such as backend engineering and AI. I believe that helps me bridge the gap between business and engineering teams effectively.</p>
+<p>So if I join DANA, I believe I can contribute not only as someone who tracks timelines and tasks, but also as someone who understands the technical context behind the project and can help improve alignment between teams.</p>
+<hr></div></section>
+
+<section id="phrases" class="panel">
+  <h1 class="section-title">IT PM Phrase Bank</h1>
+  <div class="grid"><div class="phrase-group"><h2>Clarifying &amp; Investigation</h2><div class="phrase">I would investigate the root cause first.</div><div class="phrase">I would follow up with the engineering team to clarify the issue.</div><div class="phrase">I would validate the assumption with available data.</div><div class="phrase">I would ask for a breakdown of the remaining work.</div><div class="phrase">I would clarify the business objective behind the request.</div><div class="phrase">I would identify the actual blocker before deciding on the solution.</div></div><div class="phrase-group"><h2>Impact &amp; Measurement</h2><div class="phrase">I would assess the impact based on probability and severity.</div><div class="phrase">I would make the risk measurable.</div><div class="phrase">I would quantify the impact on timeline, scope, cost, and quality.</div><div class="phrase">I would evaluate whether the issue affects the critical path.</div><div class="phrase">I would compare the request against the team’s available capacity.</div><div class="phrase">I would look at historical velocity and actual delivery capacity.</div></div><div class="phrase-group"><h2>Stakeholder &amp; Decision</h2><div class="phrase">I would align expectations with the stakeholder.</div><div class="phrase">I would communicate the trade-off in business-friendly language.</div><div class="phrase">I would present options instead of simply saying no.</div><div class="phrase">I would make the decision based on evidence.</div><div class="phrase">I would make the trade-off explicit.</div><div class="phrase">I would document the decision and the rationale behind it.</div></div><div class="phrase-group"><h2>Risk &amp; Delivery</h2><div class="phrase">I would identify the risk, probability, impact, mitigation, and owner.</div><div class="phrase">I would prepare both a mitigation plan and a contingency plan.</div><div class="phrase">I would communicate the risk early rather than waiting until the deadline.</div><div class="phrase">I would check whether the delay affects the critical path.</div><div class="phrase">I would identify which tasks can be parallelized.</div><div class="phrase">I would consider resource reallocation.</div></div></div>
+</section>
+
+<section id="buzzwords" class="panel">
+  <h1 class="section-title">High-Value IT PM Buzzwords</h1>
+  <div class="card" style="margin-top:16px"><div class="chips"><span class="chip">Impact analysis</span><span class="chip">Root-cause analysis</span><span class="chip">Stakeholder alignment</span><span class="chip">Risk mitigation</span><span class="chip">Contingency plan</span><span class="chip">Critical path</span><span class="chip">Dependency management</span><span class="chip">Scope management</span><span class="chip">Resource allocation</span><span class="chip">Capacity planning</span><span class="chip">Sprint predictability</span><span class="chip">Acceptance criteria</span><span class="chip">Definition of Done</span><span class="chip">Effort estimation</span><span class="chip">Historical velocity</span><span class="chip">Trade-off analysis</span><span class="chip">Escalation path</span><span class="chip">Decision log</span><span class="chip">Backlog prioritization</span><span class="chip">Cross-functional alignment</span><span class="chip">Delivery risk</span><span class="chip">Business impact</span><span class="chip">Technical constraint</span><span class="chip">Measurable outcome</span><span class="chip">Mitigation owner</span><span class="chip">Blocker resolution</span><span class="chip">Scope reduction</span><span class="chip">Phased delivery</span><span class="chip">Fallback plan</span><span class="chip">Data-driven decision</span><span class="chip">Stakeholder expectation management</span></div></div>
+</section>
+
+<section id="frameworks" class="panel">
+  <h1 class="section-title">Reusable Frameworks</h1>
+  <div class="grid">
+    <div class="card"><h2>Universal Answer</h2><div class="phrase">First, I would clarify the situation and investigate the root cause. Then I would assess the impact on timeline, scope, dependencies, and business risk. After that, I would compare the available options and make the trade-off explicit to the stakeholders. Once we align on the decision, I would update the plan, assign a clear owner, and monitor the risk until it is resolved.</div></div>
+    <div class="card"><h2>Scenario / Prioritization</h2><div class="framework">Clarify → Impact Analysis → Options → Trade-off → Alignment → Execution</div></div>
+    <div class="card"><h2>Risk Management</h2><div class="framework">Risk → Probability × Impact → Mitigation → Contingency → Owner → Communication</div></div>
+    <div class="card"><h2>Status Reporting</h2><div class="framework">Overall Status → Progress → Risks → Blockers → Mitigation → Decision Needed</div></div>
+    <div class="card"><h2>Behavioral</h2><div class="framework">Situation → Responsibility → Action → Result → Lesson Learned</div></div>
+    <div class="card"><h2>Stakeholder Conflict</h2><div class="framework">Business Goal → Engineering Constraint → Trade-off → Alternatives → Decision Alignment</div></div>
+  </div>
+</section>
+</main>
+
+<div class="footer">Static single-page HTML • One interview question per tab • Works offline</div>
+</div>
+
+<script>
+const tabs=document.querySelectorAll('.tab');
+const panels=document.querySelectorAll('.panel');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    panels.forEach(x=>x.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
